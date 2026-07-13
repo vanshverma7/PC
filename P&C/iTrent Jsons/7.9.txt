@@ -1,0 +1,76 @@
+{
+    "itrent": {
+        "Person": {
+            "PersonID": "XXX",
+            "NInumber": "XXX",
+            "Title": "XXX",
+            "Forename1": "XXX",
+            "Forename2": "",
+            "Forename3": "",
+            "Surname": "XXX",
+            "Position": {
+                "PositionID": "XXX",
+                "PostID": "",
+                "OccupancyID": "XXX",
+                "PositionName": "XXX",
+                "ContractHours": "XXX",
+                "Grade": "XXX",
+                "CostCode": "XXX",
+                "Group1": "",
+                "Group2": "",
+                "WorkflowGroup": "XXX",
+                "JobFamily": "",
+                "PositionStartDate": "XXX",
+                "PositionEndDate": "",
+                "PositionUnit": {
+                    "UnitID": "XXX",
+                    "UnitName": "XXX",
+                    "UnitLevel": "XXX",
+                    "UnitType": "XXX",
+                    "UnitLocation": "XXX",
+                    "UnitGroup1": "",
+                    "UnitGroup2": "",
+                    "UnitWorkflowGroup": "XXX",
+                    "UnitStartDate": "XXX",
+                    "UnitEndDate": "",
+                    "UnitToUnit": {
+                        "UnitID": "XXX",
+                        "UnitName": "XXX",
+                        "UnitLevel": "XXX",
+                        "UnitType": "XXX",
+                        "UnitLocation": "XXX",
+                        "UnitGroup1": "",
+                        "UnitGroup2": "",
+                        "UnitWorkflowGroup": "XXX",
+                        "UnitStartDate": "XXX",
+                        "UnitEndDate": "",
+                        "UnitToUnit": {
+                            "UnitID": "XXX",
+                            "UnitName": "XXX",
+                            "UnitLevel": "XXX",
+                            "UnitType": "XXX",
+                            "UnitLocation": "XXX",
+                            "UnitGroup1": "",
+                            "UnitGroup2": "",
+                            "UnitWorkflowGroup": "XXX",
+                            "UnitStartDate": "XXX",
+                            "UnitEndDate": "",
+                            "UnitToOrg": {
+                                "UnitID": "",
+                                "UnitName": "XXX",
+                                "UnitLevel": "XXX",
+                                "UnitType": "XXX",
+                                "UnitLocation": "XXX",
+                                "UnitGroup1": "",
+                                "UnitGroup2": "",
+                                "UnitWorkflowGroup": "XXX",
+                                "UnitStartDate": "XXX",
+                                "UnitEndDate": ""
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

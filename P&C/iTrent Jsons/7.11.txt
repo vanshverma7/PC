@@ -1,0 +1,44 @@
+{
+    "Person": {
+        "TkprNumber": "XXX",
+        "DisplayName": "XXX",
+        "Status": "XXX",
+        "BillingName": "XXX",
+        "HiredOn": "XXX",
+        "TerminatedOn": "",
+        "Occupancy": {
+            "StartDate": "XXX",
+            "OccupancyReference": "XXX",
+            "PositionReference": "XXX",
+            "Office": "XXX",
+            "SubledgerLocation": "",
+            "StructureGroup1": "",
+            "StructureGroup2": "",
+            "Department": "XXX",
+            "Section": "XXX",
+            "Title": "XXX",
+            "SupervisingTimekeeper": "XXX",
+            "SupervisingTimekeeperReference": "XXX",
+            "ContractHours": "XXX",
+            "FTE": "XXX",
+            "EmploymentBasis": "XXX",
+            "FTEPercent": "XXX",
+            "Parent": {
+                "ParentDepartment": [
+                    {
+                        "ParentDepartment": "XXX"
+                    },
+                    {
+                        "ParentDepartment": "XXX"
+                    },
+                    {
+                        "ParentDepartment": "XXX"
+                    },
+                    {
+                        "ParentDepartment": "XXX"
+                    }
+                ]
+            }
+        }
+    }
+}

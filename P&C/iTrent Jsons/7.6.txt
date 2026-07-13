@@ -1,0 +1,16 @@
+{
+    "itrent": {
+        "Person": {
+            "PersonID": "XXX",
+            "Position": {
+                "PositionID": "XXX",
+                "PositionName": "XXX",
+                "Pattern": {
+                    "EffectiveDate": "XXX",
+                    "WorkingPattern": "XXX"
+                }
+            }
+        }
+    }
+}
+``
