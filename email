@@ -1,0 +1,43 @@
+Subject: iTrent Web Services – JSON Analysis Complete + Questions (Action Needed)
+
+Hi all,
+
+Wanted to give you an update on where we are with the iTrent RESTful Web Services review.
+
+We've now completed a full analysis of the JSON responses across all 20 pre-publish data services and compared them line-by-line against the iTrent RESTful Web Services Guide. Quick summary: 8 of the 20 services returned data, 11 returned a generic "page not found," and for the 8 that did return data we found a number of gaps between what the documentation describes and what we're actually getting back (fields that exist in the data but aren't documented, documented fields/objects that never show up, some structural inconsistencies between similar services, and a few smaller documentation issues).
+
+Before we take anything to the API provider (MHR/iTrent), there are a few things we'd like your input on first, since we think a couple of these might just be config/data questions we can answer ourselves:
+
+1. Can we get a confirmed list of which of the 20 iTrent services we are actually licensed for?
+11 of the 20 services returned an identical generic 404 (7.2, 7.4, 7.5, 7.8, 7.10, 7.12, 7.13, 7.16, 7.17, 7.18, 7.20). The guide states this functionality is licence-gated, so before we escalate all 11 to the API provider, it would help to first rule out anything we simply aren't licensed for.
+
+2. We discovered that a few of the sample records are missing NI numbers. Our initial impression is that the ones missing it are vendors, or staff who don't work under NEST directly - can this be confirmed?
+5 of 7 sample records have a blank NI number, and the guide notes this is a UK-legislation-only field, so the theory is plausible, but worth checking against the underlying records before we treat it as expected behaviour.
+
+3. Some 7.1 records stop at the "Contact" field, while others continue on to a full Emergency Contact and Position block. Is this tied to employment status (e.g. leavers vs. current staff), or something else?
+
+4. Should we re-test service 7.19 (User Defined Fields) now that its documentation has actually been located?
+Our original test log recorded 7.19 as "couldn't find any documentation," but it's documented on page 144 of the guide. We don't have an actual pass/fail result for it like we do the other 19.
+
+5. Do we have the ability to trigger a genuine real-time WDP event (rather than a GET request) in our test environment, to properly capture service 7.15?
+The guide states Employee Record (date effective) is available as a WDP (real-time outgoing) service only, with a mandatory effective-date header. Our current sample has neither, so it may not be a valid test of this service.
+
+6. For Employee Record (7.14) and Employee Record date-effective (7.15): are the missing optional blocks genuinely not populated for the employees we tested, or should we re-test with employees known to have this data?
+In 7.14, all 6 sample records are missing next of kin, other addresses, checks, skills, qualifications, terms & conditions, and holidays. In 7.15's sample, most of these are missing too, but terms & conditions and holidays are present - so it's not quite the same gap on both services and worth re-testing each separately.
+
+7. Do our downstream systems already account for the two different field-naming styles used across services (e.g. "BirthDate" in some services vs "birthdate" in others), or does anything need updating?
+
+8. Can whoever owns our iTrent configuration confirm whether the optional grouping fields (Structure Group, Unit Group, Job Family) are actually set up and in use for our organisation?
+These came back completely blank in every record, across every service we tested - most likely because we've simply never used these optional labels, but flagging so we can confirm and close this one out.
+
+9. Can we confirm whether our address setup is configured differently for service 7.15 than for the others?
+Address line 1 and address line 3 are blank in every record for 7.1, 7.7 and 7.14, but fully filled in for the 7.15 sample. Could just be a different employee used for that particular test, or a genuine setup difference.
+
+10. Some fields in the data come back as a "list" - meaning the same type of information can repeat more than once for one person, shown in the data as multiple entries inside square brackets [ ]. We saw this clearly for: Contact Details (services 7.7, 7.14, 7.15 - always exactly 3 entries), Cost Centre Split (services 7.14, 7.15 - 1 entry for one employee, 2 for another), Unit (service 7.14), and Parent Department (service 7.11). Since the data was masked, we're not actually sure what the 3 Contact Details entries represent - it could be email/mobile/telephone, or it could be current and previous address history, we can't tell from what we have. Since the number of entries clearly varies between employees, can we confirm we should always capture every entry for these fields rather than just the first one, and also confirm what the 3 Contact Details entries actually represent?
+
+Separately, we've also drafted a set of questions for MHR. We're holding off on sending that list for now - we expect that once we have your answers above, a good chunk of it will either answer itself or need reframing. Once it's tightened up, we can either send it across for you to put to them, or, if it's easier, get on a call with MHR directly to go through it together.
+
+I'll plan to put some time in next week for a call to go over the above and clear out any doubts - let me know what works for you.
+
+Thanks,
+Aman
